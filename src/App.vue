@@ -15,13 +15,8 @@
   <Discount />
   
 
-  <div v-for="(원룸, i) in 원룸들" :key="원룸" >
-    <img :src="원룸들[i].image" class="room-img" alt="">
-    <h4 @click="모달창열렸니= true, 누른거 = i">
-      {{ 원룸들[i].title}}
-    </h4>
-    <p> {{ 원룸들[i].price}} 원</p>
-  </div>
+  <Card :원룸="원룸들[i]" v-for="(원룸,i) in 원룸들" :key="원룸" />
+  
   
   
 </template>
@@ -29,7 +24,7 @@
 <script>
 import data from './assets/oneroom' 
 import Discount from './components/Discount.vue'
-
+import Card from './components/Card.vue'
 
 export default {
   name: 'App',
@@ -44,6 +39,7 @@ export default {
   },
   components: {
     Discount,
+    Card
   }
 }
 </script>
