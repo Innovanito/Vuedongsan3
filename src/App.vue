@@ -12,7 +12,8 @@
     <a v-for="메뉴 in 메뉴들" :key="메뉴"> {{ 메뉴}} </a>
   </div>
 
-
+  <Discount />
+  
 
   <div v-for="(원룸, i) in 원룸들" :key="원룸" >
     <img :src="원룸들[i].image" class="room-img" alt="">
@@ -27,6 +28,8 @@
 
 <script>
 import data from './assets/oneroom' 
+import Discount from './components/Discount.vue'
+
 
 export default {
   name: 'App',
@@ -38,11 +41,20 @@ export default {
       메뉴들 : ['Home', 'Shop', 'About'],
       products: ['역삼동원룸', '천호동원룸', '마포구원룸']
     }    
+  },
+  components: {
+    Discount,
   }
 }
 </script>
 
 <style>
+.discount {
+  background: #eee;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+}
 .room-img {
   width: 80%;
   margin-top: 40px;
