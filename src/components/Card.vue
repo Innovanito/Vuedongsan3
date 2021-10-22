@@ -2,7 +2,7 @@
   <div  >
     <img :src="원룸.image" class="room-img" alt="">
     <h4 @click="함수">{{ 원룸.title}}</h4>
-    <p @click="함수"> {{ 원룸.price}} 만원임</p>
+    <p @click="함수"> {{ 원룸.price}} 만원</p>
   </div>
 </template>
 

@@ -1,12 +1,7 @@
 <template>
 
-  <div v-if="모달창열렸니" class="black-bg">
-    <div class="white-bg">
-      <h4>{{ 원룸들[누른거].title}}</h4>
-      <p> {{ 원룸들[누른거].content}}</p>
-      <button @click="모달창열렸니= false">닫기</button>
-    </div>    
-  </div>
+  <Modal :모달창열렸니="모달창열렸니" :누른거="누른거" 
+  :원룸들="원룸들" @closeModal="모달창열렸니 = false" />
 
   <div class="menu">
     <a v-for="메뉴 in 메뉴들" :key="메뉴"> {{ 메뉴}} </a>
@@ -26,6 +21,7 @@
 import data from './assets/oneroom' 
 import Discount from './components/Discount.vue'
 import Card from './components/Card.vue'
+import Modal from './components/Modal.vue'
 
 export default {
   name: 'App',
@@ -40,7 +36,8 @@ export default {
   },
   components: {
     Discount,
-    Card
+    Card,
+    Modal
   }
 }
 </script>
