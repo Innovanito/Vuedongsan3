@@ -33,6 +33,11 @@ export default {
         this.month = 1;
       }
     }
+  },
+  beforeUpdate() {
+    if(this.month == 2) {
+      alert('2개월은 너무 적음 안팜!')
+    }
   }
 }
 </script>
