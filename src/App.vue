@@ -1,7 +1,9 @@
 <template>
 
-  <Modal :모달창열렸니="모달창열렸니" :누른거="누른거" 
-  :원룸들="원룸들" @closeModal="모달창열렸니 = false" />
+  <div class="start" :class="{ end : 모달창열렸니 }" >
+    <Modal :모달창열렸니="모달창열렸니" :누른거="누른거" 
+    :원룸들="원룸들" @closeModal="모달창열렸니 = false" />
+  </div>
 
   <div class="menu">
     <a v-for="메뉴 in 메뉴들" :key="메뉴"> {{ 메뉴}} </a>
@@ -83,5 +85,12 @@ div {
 .menu a {
   color: white;
   padding: 10px;
+}
+.start {
+  opacity: 0;
+  transition: all 2s;
+}
+.end {
+  opacity: 1;
 }
 </style>
