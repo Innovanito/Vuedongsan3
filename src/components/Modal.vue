@@ -23,8 +23,16 @@ export default {
     누른거 : Number,
     모달창열렸니 : Boolean,
   },
-  methods: {
-    
+  watch: {  
+    month(a) {
+      if( a > 12) {
+        alert('13이상 입력하지 마셈')
+      } 
+      else if ( isNaN(a) == true) {
+        alert('문자는 입력하지 마세욤');
+        this.month = 1;
+      }
+    }
   }
 }
 </script>
